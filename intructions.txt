@@ -1,6 +1,13 @@
+Programming Assignment 1: All about DNS
+CSE 310, Spring 2023
+Instructor: Aruna Balasubramanian
+Due date: 02/21/2023, 9.00pm
+
 Almost everything on the Internet involves DNS resolution. If DNS is slow, the
 performance of your application is going to suffer. The goal of this homework is writing
 your own DNS resolver, and compare its performance with other existing DNS resolvers.
+
+
 Part A (70 points)
 
 You will be implementing a DNS resolver. The resolver takes as input a domain name.
@@ -47,12 +54,16 @@ You will use two APIs to create a DNS request to each individual server. The fir
 create a DNS query and the second is to send this query to the destination. Figuring out
 the right APIs is up to you, but both can be found in the library. However, as mentioned
 earlier you are not allowed to use the resolve function in the library.
+
+
 PART B (30 points)
 
 Your next task is to measure the performance of your DNS resolver from Part A. Pick 3
 out of the top 10 Websites from https://www.investisdigital.com/blog/technology/mostvisited-sites-2022
+
 Experiment 1: Run your DNS resolver on each website 10 times and find the average
 time, 25th percentile, and 75th percentile to resolve the DNS for each of the websites.
+
 Experiment 2: Now use your local DNS resolver and repeat the experiment (call this Local
 DNS). Find the average time to resolve the address for the websites.
 
@@ -66,3 +77,46 @@ For each of the 3 Website, plot the average, 25th percentile and 75th percentile
 over the 10 runs and draw a graph. The x axis is the website. The y axis is the time taken
 to resolve the query. You can use a bar graph or a box plot. The 25th and 75th percentile
 can be shown as whiskers or using any other way you want to.
+
+Explain your results in detail. Explain specifically what differences you see in the
+performance and some likely reasons for why you see the differences.
+
+
+Submission instruction
+
+You need to submit your homework in a single zip file as follows:
+• The zip file and (the root folder inside) should be named using your last name,
+first name, and the assignment name, all separated by a dash (‘-‘)
+e.g. lastname-firstname-assignment1.zip
+
+• The zip file should contain your code corresponding to Part A and your answer in
+Part B. Please be sure to put code in the root folder rather than in separate
+folders. Provide sufficient comments to your code.
+
+• Include the expected output file “mydig_output” as specified in Part A.
+
+• You should provide a README file describing:
+
+◦ External libraries used.
+
+◦ Instructions on how to run your programs.
+
+All README and your answer to Part B should be in pdf.
+
+APPENDIX
+
+A. Assuming you write your program using Python, you can use the DNS library to
+perform the single DNS resolution. The recommended library is: dnspython
+
+You will likely need to install this library on python. If you choose to write your program
+using C or using a different DNS library, you should get permission from the instructor
+first. Remember that you cannot use these libraries to perform the entire resolution.
+
+A note on running your code using the Universities network
+
+If you are not able to connect to the root servers on campus, this is because the campus
+network blocks access to the root servers (but the CS department network does not do so).
+You can work around this by using a VPN. Please note that Tunnel Bear VPN does not work.
+It resolves the complete query for you even if you are trying to do it iteratively. This may
+be true for other VPNs as well so do check to make sure the VPN is not doing a complete
+resolution.

@@ -8,5 +8,5 @@ Libraries Used:
 Run Instructions:
 - Navigate to project file
 - Run "python3 DNS.py"
-- Input desired domain name to query
+- Input desired domain name to query (Ex: www.cnn.com)
 - View results

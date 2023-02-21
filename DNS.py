@@ -41,6 +41,7 @@ def myDig(name, ip):
 
     # Handle CNAME Found
     if udpData.answer != [] and "CNAME" in udpData.answer[0].to_text():
+        # Multiple CNAME Found
         if len(udpData.answer) > 0:
             for i in udpData.answer:
                 # print(udpData.answer[i].to_text())

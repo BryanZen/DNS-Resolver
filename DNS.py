@@ -41,9 +41,14 @@ def myDig(name, ip):
 
     # Handle CNAME Found
     if udpData.answer != [] and "CNAME" in udpData.answer[0].to_text():
-        for i in udpData.answer:
-            # print(udpData.answer[i].to_text())
-            edit_cname = (myDig(udpData.answer[i].to_text().split()[-1], rootIPv4[0]).split())
+        if len(udpData.answer) > 0:
+            for i in udpData.answer:
+                # print(udpData.answer[i].to_text())
+                edit_cname = (myDig(udpData.answer[i].to_text().split()[-1], rootIPv4[0]).split())
+                edit_cname[0] = name + "."
+                return " ".join(edit_cname)
+        else:
+            edit_cname = (myDig(udpData.answer[0].to_text().split()[-1], rootIPv4[0]).split())
             edit_cname[0] = name + "."
             return " ".join(edit_cname)
 
@@ -51,11 +56,14 @@ def myDig(name, ip):
     elif udpData.additional:
         for i in range(len(udpData.additional)):
             if ":" not in udpData.additional[i].to_text().split()[-1]:
-                return myDig(name, udpData.additional[i].to_text().split()[-1])
+                newIp = udpData.additional[i].to_text().split()[-1]
+                return myDig(name, newIp)
 
     # Handle Authority Information
     elif udpData.authority:
-        return myDig(name, myDig(udpData.authority[0].to_text().split()[-1], rootIPv4[0]).split()[-1])
+        newDomain = udpData.authority[0].to_text().split()[-1]
+        newIp = myDig(newDomain, rootIPv4[0]).split()[-1]
+        return myDig(name, newIp)
     else:
         raise Exception("Shovel Broken")
 

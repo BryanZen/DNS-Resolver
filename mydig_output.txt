@@ -1,0 +1,52 @@
+Input:
+www.google.co.jp
+
+Output:
+QUESTION SECTION: 
+www.google.co.jp.   IN A
+
+ANSWER SECTION: 
+www.google.co.jp. 300 IN A 142.250.72.99
+
+Query time: 362 msec
+WHEN: Tuesday, February 21 19:19:09 2023
+
+Input:
+www.bryanzen.com
+
+Output:
+QUESTION SECTION: 
+www.bryanzen.com.   IN A
+
+ANSWER SECTION: 
+www.bryanzen.com. 20 IN A 35.229.48.116
+
+Query time: 106 msec
+WHEN: Tuesday, February 21 19:20:16 2023
+
+Input:
+www.youtube.com
+
+Output:
+QUESTION SECTION: 
+www.youtube.com.   IN A
+
+ANSWER SECTION: 
+www.youtube.com. 300 IN A 142.250.65.206
+
+Query time: 140 msec
+WHEN: Tuesday, February 21 19:20:54 2023
+
+Input:
+www.instagram.com
+
+Output:
+QUESTION SECTION: 
+www.instagram.com.   IN A
+
+ANSWER SECTION: 
+www.instagram.com. 60 IN A 31.13.71.174
+
+Query time: 201 msec
+WHEN: Tuesday, February 21 19:22:07 2023
+
